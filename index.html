@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mobile Shop</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			padding: 20px;
+			background-color: #6beaf4;
+			color: white;
+			margin: 0;
+		}
+
+		form {
+			width: 80%;
+			margin: 0 auto;
+			background-color: white;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		input[type=text], input[type=email], input[type=tel], textarea {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+
+		input[type=submit] {
+			background-color: #26d034;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #555;
+		}
+
+		input[type=submit]:focus {
+			outline: none;
+		}
+
+		.error {
+			color: red;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+	</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+	<script>
+		function validateForm() {
+			var name = document.forms["myForm"]["name"].value;
+			var email = document.forms["myForm"]["email"].value;
+			var phone = document.forms["myForm"]["phone"].value;
+
+			if (name == "" || email == "" || phone == "") {
+				document.getElementById("error").innerHTML = "All fields must be filled out";
+				return false;
+			}
+
+			if (!validateEmail(email)) {
+				document.getElementById("error").innerHTML = "Invalid email format";
+				return false;
+			}
+
+			if (!validatePhone(phone)) {
+				document.getElementById("error").innerHTML = "Invalid phone number format";
+				return false;
+			}
+		}
+
+		function validateEmail(email) {
+			var re = /\S+@\S+\.\S+/;
+			return re.test(email);
+		}
+
+		function validatePhone(phone) {
+			var re = /^\d{10}$/;
+			return re.test(phone);
+		}
+	</script>
+</head>
+<body>
+    <h1>Mobile Planet</h1>
+
+    <div id="ourproducts">
+        <div class="ourproducts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="ourproducts-section-sub-heading mb-3">
+                            <u>Planet's Brands:</u>
+                        </h2>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_colors_09142021_big.jpg.small_2x.jpg" class="skills-card-image" height="200" width="250"/>
+                            <h2 class="skills-card-title">Apple</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://s.yimg.com/uu/api/res/1.2/XndBmkatSWTainK1aZiCTw--~B/aD0xNDUxO3c9MjQwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2021-04/d1bce6d0-97a8-11eb-baee-1220f349268a.cf.jpg" height="200" width="200"/>
+                            <h2 class="skills-card-title">Samsung</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://cdn.vox-cdn.com/thumbor/swD7q-aFUNPXP2OL4AaK2yl2Nng=/0x0:7645x4500/1400x1400/filters:focal(3823x2250:3824x2251)/cdn.vox-cdn.com/uploads/chorus_asset/file/22755089/Google_Pixel_6__Portfolio_Shot.jpg" class="skills-card-image" height="200" width="200"/>
+                            <h2 class="skills-card-title">Google Pixel</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-10-2.jpg" class="skills-card-image" height="200" width="200"/>
+                            <h2 class="skills-card-title">Redmi</h2>
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202301/oppo_reno_8t-sixteen_nine.jpg?VersionId=TebHi2Hc8AVAFB6u3wHhXzL_ivx043AY" height="200" width="250"/>
+                            <h2 class="skills-card-title">Oppo</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2022/02/08/cc0b2f27e46a0e33ce32c5488dd2346f_original.jpg" height="200" width="200"/>
+                            <h2 class="skills-card-title">Realme</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202303/ezgif-3-90e2544129-sixteen_nine.jpg?size=948:533" height="200" width="250"/>
+                            <h2 class="skills-card-title">One Plus</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="Shadow skills-card text-center mb-3">
+                            <img src="https://www.91-cdn.com/hub/wp-content/uploads/2022/12/vivo-s16-pro-image-feat-1200x900.jpg" height="200" width="250"/>
+                            <h2 class="skills-card-title">Vivo</h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+	<form name="myForm" onsubmit="return validateForm()" method="post">
+		<div id="error"></div>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required><br>
+
+		<label for="message">Message:</label><br>
+		<input type="tel" id="phone" name="phone" required><br>
+		 <input type="submit" value="Submit">
+  </form>
